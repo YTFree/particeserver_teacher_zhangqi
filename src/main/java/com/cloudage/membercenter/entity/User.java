@@ -9,6 +9,7 @@ import com.cloudage.membercenter.util.BaseEntity;
 public class User extends BaseEntity{
 	String account;
 	String passwordHash;
+	String email;
 	String name;
 	String avatar;
 
@@ -18,6 +19,14 @@ public class User extends BaseEntity{
 	}
 	public String getPasswordHash() {
 		return passwordHash;
+	}
+	
+	@Column(nullable = false,unique=true)
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getName() {
 		return name;
